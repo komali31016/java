@@ -1,0 +1,27 @@
+# Maven
+- task: CmdLine@2
+  inputs:
+    script: |
+      javac k.java
+      
+      java k
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+
+public class AddTwoIntegers {
+    public static void main(String[] args) {
+        
+        int first = 10;
+        int second = 20;
+        int sum = first + second;
+        System.out.println("The sum is: " + sum);
+    }
+}
